@@ -27,14 +27,14 @@ public class Orders implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "Orders_id", type = IdType.AUTO)
+    @TableId(value = "Orders_id", type = IdType.INPUT)
     private Integer ordersId;
 
     @TableField("Goods_id")
     private Integer goodsId;
 
     @TableField("User_id")
-    private Integer userId;
+        private Integer userId;
 
     @TableField("Orders_state")
     private String ordersState;

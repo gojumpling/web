@@ -5,7 +5,7 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.code.pojo.Ad">
         <id column="AD_id" property="adId" />
-        <result column="Advertiser_id" property="advertiserId" />
+        <result column="User_id" property="userId" />
         <result column="AD_title" property="adTitle" />
         <result column="AD_content" property="adContent" />
         <result column="AD_hits" property="adHits" />

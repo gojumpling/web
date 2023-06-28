@@ -27,7 +27,7 @@ public class Goods implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "Goods_id", type = IdType.AUTO)
+    @TableId(value = "Goods_id", type = IdType.INPUT)
     private Integer goodsId;
 
     @TableField("User_id")

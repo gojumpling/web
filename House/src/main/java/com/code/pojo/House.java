@@ -27,7 +27,7 @@ public class House implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "House_id", type = IdType.AUTO)
+    @TableId(value = "House_id", type = IdType.INPUT)
     private Integer houseId;
 
     @TableField("User_id")

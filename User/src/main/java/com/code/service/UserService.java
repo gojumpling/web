@@ -13,4 +13,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UserService extends IService<User> {
 
+    int getUserID();
+
+    Boolean deleteUser(int id);
+
+
+    User login(User user);
+
+
 }

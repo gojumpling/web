@@ -27,11 +27,11 @@ public class Ad implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "AD_id", type = IdType.AUTO)
+    @TableId(value = "AD_id", type = IdType.INPUT)
     private Integer adId;
 
-    @TableField("Advertiser_id")
-    private Integer advertiserId;
+    @TableField("User_id")
+    private Integer userId;
 
     @TableField("AD_title")
     private String adTitle;

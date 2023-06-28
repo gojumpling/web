@@ -27,7 +27,7 @@ public class Contract implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "Contract_id", type = IdType.AUTO)
+    @TableId(value = "Contract_id", type = IdType.INPUT)
     private Integer contractId;
 
     @TableField("User_id")

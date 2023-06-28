@@ -10,7 +10,7 @@
         <result column="User_name" property="userName" />
         <result column="User_phone" property="userPhone" />
         <result column="User_email" property="userEmail" />
-        <result column="User_sex" property="userSex" />
+        <result column="User_sex    " property="userSex" />
         <result column="User_address" property="userAddress" />
     </resultMap>
 

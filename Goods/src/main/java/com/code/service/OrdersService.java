@@ -13,4 +13,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface OrdersService extends IService<Orders> {
 
+
+    int getOrderID();
+
+    Boolean deleteOrder(int id);
+
 }
