@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.code.mapper.HouseMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.code.pojo.House">
+        <id column="House_id" property="houseId" />
+        <result column="User_id" property="userId" />
+        <result column="House_area" property="houseArea" />
+        <result column="House_address" property="houseAddress" />
+        <result column="House_rent" property="houseRent" />
+        <result column="House_state" property="houseState" />
+        <result column="House_date" property="houseDate" />
+        <result column="House_level" property="houseLevel" />
+        <result column="House_type" property="houseType" />
+        <result column="House_notes" property="houseNotes" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        House_id, User_id, House_area, House_address, House_rent, House_state, House_date, House_level, House_type, House_notes
+    </sql>
+
+</mapper>

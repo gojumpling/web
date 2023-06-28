@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author xiaoshuai
- * @since 2023-06-19
+ * @since 2023-06-28
  */
 @RestController
 @RequestMapping("/ad")

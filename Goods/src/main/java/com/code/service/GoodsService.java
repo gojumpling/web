@@ -1,6 +1,6 @@
 package com.code.service;
 
-import com.pojo.Goods;
+import com.code.pojo.Goods;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author xiaoshuai
- * @since 2023-06-19
+ * @since 2023-06-28
  */
 public interface GoodsService extends IService<Goods> {
 

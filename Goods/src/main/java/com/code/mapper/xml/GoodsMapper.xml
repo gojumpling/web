@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.code.mapper.GoodsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.code.pojo.Goods">
+        <id column="Goods_id" property="goodsId" />
+        <result column="User_id" property="userId" />
+        <result column="Goods_name" property="goodsName" />
+        <result column="Goods_type" property="goodsType" />
+        <result column="Goods_price" property="goodsPrice" />
+        <result column="Goods_date" property="goodsDate" />
+        <result column="Goods_state" property="goodsState" />
+        <result column="Goods_notes" property="goodsNotes" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        Goods_id, User_id, Goods_name, Goods_type, Goods_price, Goods_date, Goods_state, Goods_notes
+    </sql>
+
+</mapper>

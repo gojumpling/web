@@ -1,6 +1,6 @@
 package com.code.mapper;
 
-import com.pojo.Admin;
+import com.code.pojo.Admin;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author xiaoshuai
- * @since 2023-06-19
+ * @since 2023-06-28
  */
 public interface AdminMapper extends BaseMapper<Admin> {
 

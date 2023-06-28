@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.code.mapper.BiddingMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.code.pojo.Bidding">
+        <id column="Bidding_id" property="biddingId" />
+        <result column="AD_id" property="adId" />
+        <result column="User_id" property="userId" />
+        <result column="Bidding_amount" property="biddingAmount" />
+        <result column="Bidding_state" property="biddingState" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        Bidding_id, AD_id, User_id, Bidding_amount, Bidding_state
+    </sql>
+
+</mapper>

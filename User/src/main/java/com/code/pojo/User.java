@@ -16,7 +16,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author xiaoshuai
- * @since 2023-06-19
+ * @since 2023-06-28
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -43,6 +43,12 @@ public class User implements Serializable {
 
     @TableField("User_email")
     private String userEmail;
+
+    @TableField("User_sex")
+    private String userSex;
+
+    @TableField("User_address")
+    private String userAddress;
 
 
 }

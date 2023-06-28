@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.code.mapper.AdMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.code.pojo.Ad">
+        <id column="AD_id" property="adId" />
+        <result column="Advertiser_id" property="advertiserId" />
+        <result column="AD_title" property="adTitle" />
+        <result column="AD_content" property="adContent" />
+        <result column="AD_hits" property="adHits" />
+        <result column="AD_startTime" property="adStarttime" />
+        <result column="AD_endTime" property="adEndtime" />
+        <result column="AD_state" property="adState" />
+        <result column="AD_date" property="adDate" />
+        <result column="AD_pic" property="adPic" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        AD_id, Advertiser_id, AD_title, AD_content, AD_hits, AD_startTime, AD_endTime, AD_state, AD_date, AD_pic
+    </sql>
+
+</mapper>
