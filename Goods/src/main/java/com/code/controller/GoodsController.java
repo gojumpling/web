@@ -21,8 +21,6 @@ import java.util.List;
 @RestController
 public class GoodsController {
 
-
-
     @Resource
     GoodsService goodsService;
 
