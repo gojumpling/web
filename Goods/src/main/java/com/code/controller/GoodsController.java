@@ -4,8 +4,10 @@ package com.code.controller;
 import com.code.pojo.Goods;
 import com.code.service.GoodsService;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.*;
 import java.util.Date;
 import java.util.List;
 
@@ -69,6 +71,9 @@ public class GoodsController {
         return goodsService.getUserGoods(id);
 
     }
+
+
+
 
 
 }
