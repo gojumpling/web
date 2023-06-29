@@ -48,4 +48,14 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
         lambdaQueryWrapper.eq(Goods::getUserId,id);
         return this.list(lambdaQueryWrapper);
     }
+
+    @Override
+    public List<Goods> listAll(String name) {
+        LambdaQueryWrapper<Goods> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper
+                .like(Goods::getGoodsName,name).or()
+                .like(Goods::getGoodsNotes,name).or()
+                .like(Goods::getGoodsPrice,name);
+        return this.list(lambdaQueryWrapper);
+    }
 }
