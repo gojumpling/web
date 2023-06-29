@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.UUID;
 
 @RestController
 @CrossOrigin //允许所有ip跨域
@@ -26,7 +27,7 @@ public class ImageController {
         String fileName = file.getOriginalFilename();
         System.out.println("原始文件名:" + fileName);
         // 新文件名
-        String newFileName = fileName;
+        String newFileName = UUID.randomUUID().toString().trim().replaceAll("-", "")+fileName;
         // 获得项目的路径
         //ServletContext sc = request.getSession().getServletContext();
         // 上传位置
@@ -79,6 +80,7 @@ public class ImageController {
         System.out.println("上传图片到:" + path +""+ newFileName);
 
         String src = basePath +"House/static/images/"+ newFileName;
+        src="http://43.139.187.120:8080/House/static/images/"+newFileName;
         return src;
     }
 
