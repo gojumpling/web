@@ -116,7 +116,7 @@ public class UserController {
             user.setUserAccount(account);
             user.setUserPwd(pwd);
             user.setUserEmail(userEmail);
-            user.setUserId(userService.getUserID());
+            user.setUserId(userService.getUserID()+1);
             userService.save(user);
             return true;
         }
