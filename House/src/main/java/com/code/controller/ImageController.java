@@ -1,6 +1,9 @@
 package com.code.controller;
 
 
+import com.code.pojo.HousePic;
+import com.code.service.HousePicService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +20,8 @@ import java.util.UUID;
 @RestController
 @CrossOrigin //允许所有ip跨域
 public class ImageController {
+    @Autowired
+    private HousePicService housePicService;
 
     @RequestMapping("/House/image/set")
     public String oneFileUpload(
@@ -81,6 +86,10 @@ public class ImageController {
 
         String src = basePath +"House/static/images/"+ newFileName;
         src="http://43.139.187.120:8080/House/static/images/"+newFileName;
+        HousePic housePic = new HousePic();
+        housePic.setHouseId(Integer.valueOf(courseId));
+        housePic.setUrl(src);
+        housePicService.save(housePic);
         return src;
     }
 
