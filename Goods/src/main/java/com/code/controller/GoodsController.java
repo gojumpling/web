@@ -17,6 +17,7 @@ import java.util.List;
  * @author xiaoshuai
  * @since 2023-06-28
  */
+@CrossOrigin
 @RestController
 public class GoodsController {
 
@@ -25,7 +26,12 @@ public class GoodsController {
     @Resource
     GoodsService goodsService;
 
+    @RequestMapping(value = "/Goods/All",method = RequestMethod.GET)
+    public List<Goods> AllGoods(@RequestParam(value = "GoodsName") String name){
+        System.out.println("6666\n==========================="+name);
+        return goodsService.listAll(name);
 
+    }
 
     @RequestMapping(value = "/Goods",method = RequestMethod.POST)
     public Boolean addGoods(@RequestBody Goods goods){

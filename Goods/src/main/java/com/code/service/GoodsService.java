@@ -24,4 +24,5 @@ public interface GoodsService extends IService<Goods> {
 
     List<Goods> getUserGoods(int id);
 
+    List<Goods> listAll(String name);
 }

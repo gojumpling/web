@@ -17,6 +17,7 @@ import java.util.Date;
  * @author xiaoshuai
  * @since 2023-06-28
  */
+@CrossOrigin
 @RestController
 public class OrdersController {
 
