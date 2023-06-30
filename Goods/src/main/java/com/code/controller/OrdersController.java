@@ -1,13 +1,14 @@
 package com.code.controller;
 
 
-import com.code.pojo.Goods;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.code.pojo.Orders;
 import com.code.service.OrdersService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -27,15 +28,21 @@ public class OrdersController {
 
 
     @RequestMapping(value = "/Order",method = RequestMethod.POST)
-    public Boolean addOrder(@RequestBody Orders orders){
+    public Orders addOrder(@RequestBody Orders orders){
 
         orders.setOrdersId(ordersService.getOrderID()+1);
         orders.setOrdersDate(new Date());
 
-        return ordersService.save(orders);
+        if(ordersService.save(orders)){
+            return orders;
+        }
+        return null;
     }
 
-
+    @RequestMapping(value = "/Order/user",method = RequestMethod.GET)
+    public List<Orders> getOrderByUserId(@RequestParam("User_id") int id){
+        return ordersService.list(new QueryWrapper<Orders>().eq("User_id",id));
+    }
 
     @RequestMapping(value = "/Order",method = RequestMethod.GET)
     public Orders getOrder(@RequestParam("Order_id") int id){

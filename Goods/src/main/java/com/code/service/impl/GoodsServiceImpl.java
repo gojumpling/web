@@ -53,9 +53,9 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
     public List<Goods> listAll(String name) {
         LambdaQueryWrapper<Goods> lambdaQueryWrapper = new LambdaQueryWrapper<>();
         lambdaQueryWrapper
-                .like(Goods::getGoodsName,name).or()
-                .like(Goods::getGoodsNotes,name).or()
-                .like(Goods::getGoodsPrice,name);
+                .like(Goods::getGoodsName,name).like(Goods::getGoodsState,"在出售").or()
+                .like(Goods::getGoodsNotes,name).like(Goods::getGoodsState,"在出售").or()
+                .like(Goods::getGoodsPrice,name).like(Goods::getGoodsState,"在出售");
         return this.list(lambdaQueryWrapper);
     }
 }

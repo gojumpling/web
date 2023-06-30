@@ -1,8 +1,12 @@
 package com.code.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.code.pojo.House;
+import com.code.pojo.HousePic;
+import com.code.service.HousePicService;
 import com.code.service.HouseService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -23,24 +27,36 @@ public class HouseController {
     @Resource
     HouseService houseService;
 
+    @Autowired
+    HousePicService housePicService;
+
 
     @RequestMapping(value = "/House",method = RequestMethod.POST)
-    public Boolean addHouse(@RequestBody House house){
+    public House addHouse(@RequestBody House house){
 
         house.setHouseId(houseService.getHouseID()+1);
         house.setHouseDate(new Date());
 
-        return  houseService.save(house);
-
+        if (houseService.save(house)){
+            return house;
+        }
+        return null;
     }
 
     @RequestMapping(value = "/House",method = RequestMethod.GET)
     public House getHouse(@RequestParam(value = "House_id") int id){
-
         return houseService.getHouseByID(id);
     }
 
+    @RequestMapping(value = "/House/img",method = RequestMethod.POST)
+    public boolean addHousePic(@RequestBody HousePic housePic){
+        return housePicService.save(housePic);
+    }
 
+    @RequestMapping(value = "/House/img",method = RequestMethod.GET)
+    public List<HousePic> addHousePic(@RequestParam int id){
+        return housePicService.list(new QueryWrapper<HousePic>().eq("House_id",id));
+    }
 
 
     @RequestMapping(value = "/House",method = RequestMethod.PUT)

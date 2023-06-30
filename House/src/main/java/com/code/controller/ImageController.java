@@ -25,7 +25,7 @@ public class ImageController {
 
     @RequestMapping("/House/image/set")
     public String oneFileUpload(
-            @RequestParam("file") MultipartFile file, @RequestParam("id")  String courseId,
+            @RequestParam("file") MultipartFile file,
             HttpServletRequest request) throws IOException {
 
         // 获得原始文件名
@@ -86,10 +86,10 @@ public class ImageController {
 
         String src = basePath +"House/static/images/"+ newFileName;
         src="http://43.139.187.120:8080/House/static/images/"+newFileName;
-        HousePic housePic = new HousePic();
-        housePic.setHouseId(Integer.valueOf(courseId));
-        housePic.setUrl(src);
-        housePicService.save(housePic);
+//        HousePic housePic = new HousePic();
+//        housePic.setHouseId(Integer.valueOf(courseId));
+//        housePic.setUrl(src);
+//        housePicService.save(housePic);
         return src;
     }
 

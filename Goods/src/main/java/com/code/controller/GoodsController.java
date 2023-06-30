@@ -1,13 +1,15 @@
 package com.code.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.code.pojo.Goods;
+import com.code.pojo.GoodsPic;
+import com.code.service.GoodsPicService;
 import com.code.service.GoodsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import java.io.*;
 import java.util.Date;
 import java.util.List;
 
@@ -23,24 +25,39 @@ import java.util.List;
 @RestController
 public class GoodsController {
 
+    @Autowired
+    private GoodsPicService goodsPicService;
+
     @Resource
     GoodsService goodsService;
 
     @RequestMapping(value = "/Goods/All",method = RequestMethod.GET)
     public List<Goods> AllGoods(@RequestParam(value = "GoodsName") String name){
-        System.out.println("6666\n==========================="+name);
         return goodsService.listAll(name);
 
     }
 
     @RequestMapping(value = "/Goods",method = RequestMethod.POST)
-    public Boolean addGoods(@RequestBody Goods goods){
+    public Goods addGoods(@RequestBody Goods goods){
 
         goods.setGoodsId(goodsService.getGoodsID()+1);
         goods.setGoodsDate(new Date());
-        return goodsService.save(goods);
-
+        if(goodsService.save(goods)){
+            return goods;
+        }
+        return null;
     }
+
+    @RequestMapping(value = "/Goods/img",method = RequestMethod.POST)
+    public boolean addGoodsPic(@RequestBody GoodsPic goodsPic){
+        return goodsPicService.save(goodsPic);
+    }
+
+    @RequestMapping(value = "/Goods/img",method = RequestMethod.GET)
+    public List<GoodsPic> addGoodsPic(@RequestParam int id){
+        return goodsPicService.list(new QueryWrapper<GoodsPic>().eq("Goods_id",id));
+    }
+
 
 
     @RequestMapping(value = "/Goods",method = RequestMethod.PUT)

@@ -20,12 +20,11 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @CrossOrigin //允许所有ip跨域
 public class ImageController {
-    @Autowired
-    private GoodsPicService goodsPicService;
+
 
     @RequestMapping("/Goods/image/set")
     public String oneFileUpload(
-            @RequestParam("file") MultipartFile file, @RequestParam("id")  String courseId,
+            @RequestParam("file") MultipartFile file,
             HttpServletRequest request) throws IOException {
 
         // 获得原始文件名
@@ -91,10 +90,10 @@ public class ImageController {
         String src = basePath +"Goods/static/images/"+ newFileName;
         src="http://43.139.187.120:8080/Goods/static/images/"+newFileName;
 
-        GoodsPic goodsPic = new GoodsPic();
-        goodsPic.setGoodsId(Integer.valueOf(courseId));
-        goodsPic.setUrl(src);
-        goodsPicService.save(goodsPic);
+//        GoodsPic goodsPic = new GoodsPic();
+//        goodsPic.setGoodsId(Integer.valueOf(courseId));
+//        goodsPic.setUrl(src);
+//        goodsPicService.save(goodsPic);
         return src;
     }
 
